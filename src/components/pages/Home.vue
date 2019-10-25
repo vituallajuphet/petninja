@@ -2,7 +2,7 @@
   <div class="container">
       <h2>Home</h2>
 
-      <button class="btn btn-primary" @click="signOut()">Logout</button>
+    
 
 
     <div class="card" style="width:700px">
@@ -22,15 +22,6 @@
             </form> 
         </div>
    </div>
-
-
-
-
-   <ul>
-     <li v-for="data in datas" :key="data.title">{{data.title}}</li>
-   </ul>
-      
-
   </div>
 </template>
 
@@ -60,17 +51,6 @@ export default {
         if (user) {
           var ref = firebase.app().database().ref();
           var postsRef = ref.child("posts");
-        //   const userID  = user.uid;
-        //   firebase.database().ref('posts/' + userID).set({
-        //       title: postTitle,
-        //       content: postContent,
-        //  }, function (err){
-        //     if(err){
-        //       alert(err)
-        //     }else{
-        //       alert("saved!")
-        //     }
-        //  });
         postsRef.push().set({
           content: postContent,
           title: postTitle

@@ -4,8 +4,10 @@ import firebase from 'firebase'
 
 
 import home from '@/components/pages/Home.vue'
+import about from '@/components/pages/About.vue'
 import login from '@/components/pages/Login.vue'
 import register from '@/components/pages/Register.vue'
+import blog from '@/components/pages/Blog.vue'
 
 
 Vue.use(VueRouter)
@@ -15,6 +17,8 @@ const router = new VueRouter ({
     routes: [
         { path: '/', redirect: '/home' },
         { path: '/home', name: 'home', component: home, meta:{requireAuth:true}},
+        { path: '/about', name: 'about', component: about, meta:{requireAuth:true}},
+        { path: '/blog', name: 'blog', component: blog, meta:{requireAuth:true}},
         { path: '/login', name: 'login', component: login},
         { path: '/register', name: 'register', component: register},
        

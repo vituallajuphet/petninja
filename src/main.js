@@ -2,6 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './Router'
 import firebase from 'firebase'
+import VuePageTransition from 'vue-page-transition'
+import vuetify from './vuetify'
+
+
+
+
+Vue.use(VuePageTransition)
+
 
 Vue.config.productionTip = false
 
@@ -22,4 +30,5 @@ firebase.initializeApp(firebaseConfig);
 new Vue({
   render: h => h(App),
   router,
+  vuetify
 }).$mount('#app')

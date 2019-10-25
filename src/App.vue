@@ -1,15 +1,27 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-
+  <div id="apps">
+    <v-app>
+    <appnav></appnav>
+    
+     <v-content>
+       <vue-page-transition name="fade-in-up">
+      <router-view></router-view>
+        </vue-page-transition>
+      </v-content>
+  
+   </v-app>
   </div>
 </template>
 
 <script>
 
+import appnav from '@/components/includes/Nav.vue'
 
 export default {
   name: 'app',
+  components:{
+    appnav
+  }
 }
 </script>
 
